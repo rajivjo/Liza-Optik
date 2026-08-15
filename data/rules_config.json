@@ -1,0 +1,26 @@
+{
+  "high_index_threshold": 4.0,
+  "toric_threshold": 1.50,
+  "bvd_threshold": 4.0,
+  "refer_symptoms": [
+    "penglihatan berganda",
+    "double vision",
+    "floaters",
+    "kilat",
+    "sakit kepala teruk",
+    "rabun mendadak",
+    "kabur mendadak"
+  ],
+  "lens_types": {
+    "single_vision": "Lensa Single Vision",
+    "progressive": "Lensa Progressive",
+    "bifocal": "Lensa Bifocal",
+    "toric": "Lensa Toric (Contact Lens)"
+  },
+  "coatings": {
+    "anti_glare": "Anti-Glare",
+    "blue_light": "Blue Light Filter",
+    "photochromic": "Photochromic (Transition)",
+    "uv": "UV Protection"
+  }
+}
