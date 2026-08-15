@@ -21,7 +21,7 @@ st.set_page_config(
     page_title="Session Optical Giant",
     page_icon="👓",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
 # ─── Mobile-Responsive CSS ──────────────────────
@@ -144,7 +144,10 @@ section[data-testid="stSidebar"] .stRadio label { font-size: 0.9rem; }
 /* ── Divider ── */
 hr { border-color: #30363d !important; }
 
-/* ── Mobile ── */
+/* ── Mobile bottom nav ── */
+.bottom-nav {
+    display: none;
+}
 @media (max-width: 640px) {
     .main-header h2 { font-size: 1.1rem; }
     .main-header p  { font-size: 0.78rem; }
@@ -169,6 +172,32 @@ hr { border-color: #30363d !important; }
         padding: 0.65rem;
         font-size: 0.85rem;
     }
+    section[data-testid="stSidebar"] {
+        display: none !important;
+    }
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        background: #10203F;
+        border-top: 2px solid #B08D43;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.5rem 0 0.8rem 0;
+        z-index: 9999;
+    }
+    .bottom-nav a {
+        color: #B08D43;
+        text-decoration: none;
+        font-size: 0.6rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+    .bottom-nav .icon { font-size: 1.4rem; }
+    .main .block-container { padding-bottom: 90px !important; }
 }
 
 /* ── Tablet ── */
@@ -278,12 +307,19 @@ with st.sidebar:
         st.session_state.user = None
         st.rerun()
 
-# ── Header ───────────────────────────────────────
+# ── Header + Mobile Bottom Nav ──────────────────
 st.markdown("""
 <div class="main-header">
     <h2>👓 Session Optical Giant Bukit Tinggi</h2>
     <p>AI Optician Assistant</p>
 </div>
+<nav class="bottom-nav">
+    <a href="?menu=dashboard"><span class="icon">🏠</span>Dashboard</a>
+    <a href="?menu=rx"><span class="icon">🔬</span>Analisis</a>
+    <a href="?menu=calc"><span class="icon">🧮</span>Kalkulator</a>
+    <a href="?menu=cust"><span class="icon">👥</span>Customer</a>
+    <a href="?menu=wa"><span class="icon">📱</span>WA</a>
+</nav>
 """, unsafe_allow_html=True)
 
 # ════════════════════════════════════════════════
